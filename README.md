@@ -1,46 +1,121 @@
-# Getting Started with Create React App
+# Portfolio Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React, TypeScript, Chakra UI를 사용한 포트폴리오 웹사이트입니다.
 
-## Available Scripts
+## 🚀 시작하기
 
-In the project directory, you can run:
+### 필수 요구사항
 
-### `npm start`
+- Node.js 18+
+- npm 또는 yarn
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 설치 및 실행
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+# 의존성 설치
+npm install
 
-### `npm test`
+# 개발 서버 실행
+npm **start**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 프로덕션 빌드
+npm run build
+```
 
-### `npm run build`
+## 🔥 Firebase 배포 설정
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Firebase 프로젝트 생성
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. [Firebase Console](https://console.firebase.google.com/)에서 새 프로젝트 생성
+2. 웹 앱 추가
+3. 프로젝트 설정에서 설정 정보 복사
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. 환경변수 설정
 
-### `npm run eject`
+프로젝트 루트에 `.env` 파일을 생성하고 다음 내용을 추가:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```env
+REACT_APP_FIREBASE_API_KEY=your_api_key_here
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
+REACT_APP_FIREBASE_MEASUREMENT_ID=your_measurement_id
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. Firebase CLI 설정
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+# Firebase CLI 설치 (이미 설치됨)
+npm install -g firebase-tools
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Firebase 로그인
+firebase login
 
-## Learn More
+# 프로젝트 초기화
+firebase init hosting
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# 배포
+firebase deploy
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📁 프로젝트 구조
+
+```
+src/
+├── components/          # 재사용 가능한 컴포넌트
+│   ├── Header.tsx      # 네비게이션 헤더
+│   ├── Hero.tsx        # 메인 히어로 섹션
+│   └── About.tsx       # About 섹션
+├── theme/              # Chakra UI 테마 설정
+│   └── index.ts
+├── firebase/           # Firebase 설정
+│   └── config.ts
+└── App.tsx             # 메인 앱 컴포넌트
+```
+
+## 🎨 사용된 기술
+
+- **Frontend**: React 18, TypeScript
+- **UI Framework**: Chakra UI
+- **Styling**: Emotion (CSS-in-JS)
+- **Icons**: React Icons
+- **Backend**: Firebase (Hosting, Firestore, Storage)
+- **Build Tool**: Create React App
+
+## 🌐 도메인 설정
+
+### 기본 도메인 (무료)
+
+- `your-project-id.web.app`
+- `your-project-id.firebaseapp.com`
+
+### 커스텀 도메인 (선택사항)
+
+1. 도메인 구매 (예: GoDaddy, Namecheap)
+2. Firebase Console에서 커스텀 도메인 추가
+3. DNS 설정 업데이트
+
+## 📱 반응형 디자인
+
+- 모바일 우선 접근법
+- Chakra UI의 반응형 유틸리티 활용
+- 모든 디바이스에서 최적화된 경험 제공
+
+## 🚀 배포 후 확인사항
+
+1. 웹사이트가 정상적으로 로드되는지 확인
+2. 모든 링크와 버튼이 작동하는지 테스트
+3. 모바일과 데스크톱에서 반응형 동작 확인
+4. 성능 최적화 (Lighthouse 점수 확인)
+
+## 📝 커스터마이징
+
+- `src/theme/index.ts`에서 색상과 폰트 변경
+- `src/components/`에서 컴포넌트 수정
+- `public/` 폴더에 이미지와 아이콘 추가
+
+## 🤝 기여
+
+프로젝트 개선을 위한 제안이나 버그 리포트는 언제든 환영합니다!

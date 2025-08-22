@@ -1,0 +1,46 @@
+[debug] [2025-08-22T02:56:23.862Z] ----------------------------------------------------------------------
+[debug] [2025-08-22T02:56:23.863Z] Command:       /Users/son/.nvm/versions/node/v18.20.3/bin/node /Users/son/.nvm/versions/node/v18.20.3/bin/firebase init hosting
+[debug] [2025-08-22T02:56:23.863Z] CLI Version:   13.35.1
+[debug] [2025-08-22T02:56:23.863Z] Platform:      darwin
+[debug] [2025-08-22T02:56:23.863Z] Node Version:  v18.20.3
+[debug] [2025-08-22T02:56:23.864Z] Time:          Fri Aug 22 2025 11:56:23 GMT+0900 (대한민국 표준시)
+[debug] [2025-08-22T02:56:23.864Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-22T02:56:23.867Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-22T02:56:23.867Z] > authorizing via signed-in user (blazetime4@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/son/Desktop/기타작업/작업/portfolio
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-08-22T02:56:38.508Z] Checked if tokens are valid: true, expires at: 1755834149788
+[debug] [2025-08-22T02:56:38.509Z] Checked if tokens are valid: true, expires at: 1755834149788
+[debug] [2025-08-22T02:56:38.512Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-08-22T02:56:39.307Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-22T02:56:39.307Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project portfolio-e104a (portfolio) 
+[info] 
+=== Hosting Setup
+[debug] [2025-08-22T02:56:44.044Z] Checked if tokens are valid: true, expires at: 1755834149788
+[debug] [2025-08-22T02:56:44.044Z] Checked if tokens are valid: true, expires at: 1755834149788
+[debug] [2025-08-22T02:56:44.044Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-e104a [none]
+[debug] [2025-08-22T02:56:44.456Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-e104a 200
+[debug] [2025-08-22T02:56:44.457Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-e104a {"projectId":"portfolio-e104a","projectNumber":"99553843232","displayName":"portfolio","name":"projects/portfolio-e104a","resources":{"hostingSite":"portfolio-e104a"},"state":"ACTIVE","etag":"1_76453ae7-fff3-4ce2-81e0-d11dba4bede2"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
