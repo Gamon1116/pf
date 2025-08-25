@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* 80px for fixed header */
+}
+
 /* Import custom CSS */
 @import './styles/custom.css';
 

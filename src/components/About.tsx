@@ -1,313 +1,102 @@
-import React, { useEffect, useState } from 'react'
-import {
-  FiCode,
-  FiSmartphone,
-  FiZap,
-  FiUsers,
-  FiDatabase,
-  FiCloud,
-  FiShield,
-  FiTrendingUp,
-} from 'react-icons/fi'
-
-const skills = [
-  {
-    icon: FiCode,
-    title: 'Frontend Development',
-    description:
-      'React, TypeScript, Next.js를 활용한 현대적인 웹 애플리케이션 개발',
-    level: 'Expert',
-    color: 'from-blue-500 to-blue-600',
-  },
-  {
-    icon: FiSmartphone,
-    title: 'Responsive Design',
-    description: '모든 디바이스에서 완벽하게 작동하는 반응형 웹 디자인',
-    level: 'Advanced',
-    color: 'from-green-500 to-green-600',
-  },
-  {
-    icon: FiZap,
-    title: 'Performance Optimization',
-    description: '웹 성능 최적화 및 사용자 경험 향상',
-    level: 'Advanced',
-    color: 'from-yellow-500 to-yellow-600',
-  },
-  {
-    icon: FiUsers,
-    title: 'User Experience',
-    description: '사용자 중심의 직관적이고 접근성 높은 인터페이스 설계',
-    level: 'Expert',
-    color: 'from-purple-500 to-purple-600',
-  },
-  {
-    icon: FiDatabase,
-    title: 'Backend Integration',
-    description: 'REST API, GraphQL을 활용한 백엔드 시스템 연동',
-    level: 'Intermediate',
-    color: 'from-red-500 to-red-600',
-  },
-  {
-    icon: FiCloud,
-    title: 'Cloud Services',
-    description: 'AWS, Vercel 등 클라우드 서비스 활용 및 배포',
-    level: 'Intermediate',
-    color: 'from-indigo-500 to-indigo-600',
-  },
-  {
-    icon: FiShield,
-    title: 'Security Best Practices',
-    description: '웹 보안 모범 사례 적용 및 데이터 보호',
-    level: 'Advanced',
-    color: 'from-emerald-500 to-emerald-600',
-  },
-  {
-    icon: FiTrendingUp,
-    title: 'SEO & Analytics',
-    description: '검색 엔진 최적화 및 사용자 행동 분석',
-    level: 'Intermediate',
-    color: 'from-pink-500 to-pink-600',
-  },
-]
-
-const technologies = [
-  {
-    name: 'React',
-    level: 95,
-    color: 'bg-gradient-to-r from-blue-500 to-blue-600',
-  },
-  {
-    name: 'TypeScript',
-    level: 90,
-    color: 'bg-gradient-to-r from-blue-600 to-blue-700',
-  },
-  {
-    name: 'Next.js',
-    level: 85,
-    color: 'bg-gradient-to-r from-gray-700 to-gray-800',
-  },
-  {
-    name: 'Tailwind CSS',
-    level: 90,
-    color: 'bg-gradient-to-r from-cyan-500 to-cyan-600',
-  },
-  {
-    name: 'Node.js',
-    level: 75,
-    color: 'bg-gradient-to-r from-green-500 to-green-600',
-  },
-  {
-    name: 'PostgreSQL',
-    level: 70,
-    color: 'bg-gradient-to-r from-indigo-500 to-indigo-600',
-  },
-  {
-    name: 'Docker',
-    level: 65,
-    color: 'bg-gradient-to-r from-blue-500 to-blue-600',
-  },
-  {
-    name: 'AWS',
-    level: 60,
-    color: 'bg-gradient-to-r from-yellow-500 to-yellow-600',
-  },
-]
+import React from 'react'
 
 export function About() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [activeSkill, setActiveSkill] = useState<number | null>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    const element = document.getElementById('about')
-    if (element) {
-      observer.observe(element)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section
-      id="about"
-      className="section-padding-lg bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
-    >
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-brand-100 to-blue-100 rounded-full opacity-30 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-20 blur-3xl" />
-      </div>
-
-      <div className="container-custom relative z-10">
-        <div className="space-y-20">
-          {/* About Me Section Header */}
-          <div
-            className={`text-center space-y-8 transition-all duration-1000 ${
-              isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <div className="space-y-4">
-              <h2 className="section-title gradient-text">About Me</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-blue-500 mx-auto rounded-full" />
-            </div>
-            <p className="section-subtitle">
-              프론트엔드 개발에 대한 열정과 창의성을 바탕으로, 사용자에게 의미
-              있는 디지털 경험을 제공하는 것을 목표로 합니다.
-              <br />
-              <span className="text-brand-600 font-semibold">
-                최신 기술 트렌드를 학습하고 적용하여 혁신적인 솔루션을
-                만들어갑니다.
-              </span>
+    <section id="about" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              프론트엔드 개발자로서의 성장 과정과 개발 철학
             </p>
           </div>
 
-          {/* Skills Grid */}
-          <div
-            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 transition-all duration-1000 delay-200 ${
-              isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className={`card p-6 lg:p-8 group cursor-pointer transition-all duration-500 ${
-                  activeSkill === index
-                    ? 'ring-2 ring-brand-500 ring-offset-2'
-                    : ''
-                }`}
-                onMouseEnter={() => setActiveSkill(index)}
-                onMouseLeave={() => setActiveSkill(null)}
-              >
-                <div
-                  className={`w-16 h-16 bg-gradient-to-br ${skill.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <div className="text-white text-2xl">
-                    {skill.icon({ size: 32 })}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors duration-300">
-                  {skill.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {skill.description}
-                </p>
-                <div className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full">
-                  {skill.level}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Technology Skills */}
-          <div
-            className={`space-y-8 transition-all duration-1000 delay-400 ${
-              isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <div className="text-center">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Technical Skills
-              </h3>
-              <p className="text-gray-600">주요 기술 스택과 숙련도</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {technologies.map((tech, index) => (
-                <div key={index} className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium text-gray-700">
-                      {tech.name}
-                    </span>
-                    <span className="text-sm text-gray-500">{tech.level}%</span>
-                  </div>
-                  <div className="progress-bar">
-                    <div
-                      className={`progress-fill ${tech.color}`}
-                      style={{ width: `${tech.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Experience Summary */}
-          <div
-            className={`bg-gradient-to-r from-brand-50 to-blue-50 rounded-3xl p-8 lg:p-12 text-center transition-all duration-1000 delay-600 ${
-              isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <h3 className="text-3xl font-bold text-gray-900 mb-8">
-              Why Choose Me?
+          {/* Personal Story */}
+          <div className="bg-white rounded-2xl p-8 shadow-lg mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              개발자로의 여정
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="space-y-4 group">
-                <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                  🎯
-                </div>
-                <h4 className="text-xl font-semibold text-gray-900">
-                  Problem Solver
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p>
+                2020년 상공회의소 JAVA 개발자 과정을 시작으로 개발의 세계에 발을
+                들였습니다. 처음에는 Java와 Spring을 기반으로 한 웹 개발을
+                배웠고, 전라남도 관광지 정보 프로그램과 개인 포트폴리오
+                프로그램을 개발하며 개발의 기본기를 다졌습니다.
+              </p>
+              <p>
+                이후 B사에서 프론트엔드 개발자로 일하며 React와 React Native를
+                활용한 모니터링 프로그램과 모바일 애플리케이션 개발 경험을
+                쌓았습니다. 특히 스마트팜 애플리케이션 기획부터 테스트 버전
+                제작까지 전체 개발 과정을 경험할 수 있었습니다.
+              </p>
+              <p>
+                현재 A사에서 공정 모니터링 프로그램 개발과 React Native 앱
+                유지보수를 담당하고 있으며, Electron을 활용한 데스크탑
+                애플리케이션 개발에도 참여하고 있습니다.
+              </p>
+            </div>
+          </div>
+
+          {/* Development Philosophy */}
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg mb-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">개발 철학</h3>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="bg-white rounded-lg p-4">
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  사용자 중심의 개발
                 </h4>
-                <p className="text-gray-600">
-                  복잡한 문제를 창의적으로 해결하고 최적의 솔루션을 제시합니다.
+                <p>
+                  기술적 완성도보다는 사용자가 실제로 필요로 하는 기능과
+                  사용성을 우선시합니다. 센서 기반 앱 개발 경험을 통해 복잡한
+                  데이터를 직관적으로 시각화하는 것의 중요성을 배웠습니다.
                 </p>
               </div>
-              <div className="space-y-4 group">
-                <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                  🚀
-                </div>
-                <h4 className="text-xl font-semibold text-gray-900">
-                  Fast Learner
+              <div className="bg-white rounded-lg p-4">
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  지속적인 학습과 혁신
                 </h4>
-                <p className="text-gray-600">
-                  새로운 기술과 도구를 빠르게 습득하고 프로젝트에 적용합니다.
+                <p>
+                  새로운 기술과 도구에 대한 호기심을 가지고 있으며, AI 도구를
+                  적극적으로 활용하여 개발 생산성을 향상시키고 있습니다. GPT와
+                  Cursor AI를 활용한 테스트 자동화와 문서화는 제가 추구하는 개발
+                  방식의 핵심입니다.
                 </p>
               </div>
-              <div className="space-y-4 group">
-                <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                  🤝
-                </div>
-                <h4 className="text-xl font-semibold text-gray-900">
-                  Team Player
+              <div className="bg-white rounded-lg p-4">
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  전체 개발 과정 참여
                 </h4>
-                <p className="text-gray-600">
-                  효과적인 커뮤니케이션과 협업을 통해 팀의 성과를 극대화합니다.
+                <p>
+                  단순한 코드 구현자가 아닌, 기획부터 설계, 구현, 테스트까지
+                  모든 단계에 참여할 수 있는 개발자로 성장하고자 합니다. Figma를
+                  활용한 UI/UX 설계 경험은 이러한 목표를 위한 중요한 역량입니다.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Additional Info */}
-          <div
-            className={`text-center space-y-6 transition-all duration-1000 delay-800 ${
-              isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <h3 className="text-2xl font-bold text-gray-900">
-              Let's Build Something Amazing Together
-            </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              혁신적인 아이디어를 현실로 구현하고, 사용자에게 놀라운 경험을
-              제공하는 프로젝트에 참여하고 싶습니다. 함께 성장하고 성공을
-              만들어가요!
-            </p>
+          {/* Future Goals */}
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">미래 목표</h3>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                <strong>기술적 성장:</strong> 최신 프론트엔드 기술 트렌드를
+                파악하고 적용하여 더 나은 사용자 경험을 제공하는 애플리케이션을
+                개발하고 싶습니다.
+              </p>
+              <p>
+                <strong>리더십 역량:</strong> 개발팀에서 기술적 의사결정에
+                참여하고, 주니어 개발자들의 성장을 돕는 역할을 담당하고
+                싶습니다.
+              </p>
+              <p>
+                <strong>사이드 프로젝트:</strong> 개인적인 관심사와 기술적
+                도전을 결합한 혁신적인 프로젝트를 진행하여 개발 커뮤니티에
+                기여하고 싶습니다.
+              </p>
+            </div>
           </div>
         </div>
       </div>
