@@ -45,6 +45,12 @@ export function Hero({ onContactClick, onProjectsClick }: HeroProps) {
             특히 Figma를 활용한 기획 및 디자인, GPT 및 Cursor AI 등 AI 도구를
             개발 과정에 적극 활용하여 테스트 자동화와 문서화 등 생산성 향상에
             기여하고 있습니다.
+            <br />
+            <br />
+            <span className="text-blue-600 font-medium">
+              이 포트폴리오는 AI 도구와의 협업을 통해 현대적이고 세련된
+              웹사이트로 완성되었습니다.
+            </span>
           </p>
 
           {/* Contact Info */}
