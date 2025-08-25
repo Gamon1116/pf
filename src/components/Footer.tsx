@@ -1,11 +1,6 @@
 import React from 'react'
-import { FiArrowUp } from 'react-icons/fi'
 
 export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -101,15 +96,6 @@ export function Footer() {
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © 2025 Son Jung-Woo. All rights reserved.
             </p>
-
-            {/* Scroll to Top Button */}
-            <button
-              onClick={scrollToTop}
-              className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-300 group"
-              aria-label="맨 위로 스크롤"
-            >
-              {FiArrowUp({ size: 20 })}
-            </button>
           </div>
         </div>
       </div>
