@@ -13,8 +13,8 @@ export function Footer() {
                 Son Jung-Woo
               </h3>
               <p className="text-gray-300 mb-6 max-w-md">
-                센서 기반 앱 개발부터 웹 애플리케이션까지 다양한 기술을 활용하여
-                사용자 중심의 직관적 UI를 구현하는 프론트엔드 개발자입니다.
+                산업용 모니터링 시스템과 B2B 웹·앱을 요구사항 정리부터 개발까지
+                수행하는 프론트엔드 개발자입니다.
               </p>
             </div>
 
@@ -58,7 +58,8 @@ export function Footer() {
                 <li className="text-gray-300">웹 애플리케이션 개발</li>
                 <li className="text-gray-300">모바일 앱 개발</li>
                 <li className="text-gray-300">데스크탑 앱 개발</li>
-                <li className="text-gray-300">UI/UX 디자인</li>
+                <li className="text-gray-300">요구사항 · 화면 설계</li>
+                <li className="text-gray-300">프론트엔드 · 백엔드 연동</li>
               </ul>
             </div>
           </div>
@@ -81,20 +82,10 @@ export function Footer() {
             </div>
           </div>
 
-          {/* AI Creation Note */}
-          <div className="border-t border-gray-800 pt-8 mb-8">
-            <div className="text-center">
-              <p className="text-gray-400 text-sm">
-                이 포트폴리오는 Cursor AI를 활용하여 AI 기반 바이브코딩으로
-                제작되었습니다.
-              </p>
-            </div>
-          </div>
-
           {/* Bottom Footer */}
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 Son Jung-Woo. All rights reserved.
+              © 2026 Son Jung-Woo. All rights reserved.
             </p>
           </div>
         </div>

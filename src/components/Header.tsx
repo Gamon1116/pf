@@ -23,9 +23,9 @@ export function Header({ onContactClick }: HeaderProps) {
           <div className="flex items-center">
             <a
               href="#top"
-              className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+              className="text-xl font-bold text-slate-900 hover:text-sky-600 transition-colors tracking-tight"
             >
-              PORTFOLIO
+              Son Jung-Woo
             </a>
           </div>
 
@@ -155,3 +155,4 @@ export function Header({ onContactClick }: HeaderProps) {
     </header>
   )
 }
+

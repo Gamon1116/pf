@@ -1,242 +1,227 @@
 import React from 'react'
 
+const categoryStyles: Record<
+  string,
+  { label: string; accent: string; bg: string }
+> = {
+  monitoring: {
+    label: '산업용 모니터링',
+    accent: 'border-t-sky-500',
+    bg: 'bg-sky-50 text-sky-700',
+  },
+  internal: {
+    label: '사내 도구',
+    accent: 'border-t-violet-500',
+    bg: 'bg-violet-50 text-violet-700',
+  },
+  mobile: {
+    label: '모바일 · 웹',
+    accent: 'border-t-emerald-500',
+    bg: 'bg-emerald-50 text-emerald-700',
+  },
+}
+
 export function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'E사 온도 모니터링 시스템',
+      category: 'internal' as const,
+      title: '업무 보고 · 프로젝트 일정 시스템',
+      period: '2026.06 ~ 현재',
       description:
-        '기존 프로젝트의 전 기능(센서 시각화, 데이터 출력, 컴포넌트 구조화 등)을 통합한 데스크탑 앱 개발',
-      technologies: ['React', 'TypeScript', 'Electron'],
-      features: [
-        '실시간 센서 데이터 시각화',
-        '컴포넌트 기반 아키텍처',
-        '무중단 운영 시스템',
+        '일일 업무 기록과 프로젝트 간트 일정을 연동하는 사내 웹앱 기획·개발',
+      technologies: ['React', 'TypeScript', 'Firebase', 'Vite'],
+      highlights: [
+        '업무 기록 제출 시 진행률이 간트 차트에 자동 반영',
+        'Firebase Auth·Firestore 기반 단독 설계·구축',
       ],
-      achievements: [
-        '운영 중단 없는 안정적 동작 확보',
-        '유지보수 효율화',
-        '품질 개선',
-        '보고서 기능 고도화',
-      ],
-      image: '/api/placeholder/400/250',
+      icon: '📋',
     },
     {
       id: 2,
-      title: 'D사 온도 모니터링 시스템',
-      description: '기존 앱 기능 유지하며 백엔드 포함한 전체 시스템 개발',
-      technologies: [
-        'React',
-        'TypeScript',
-        'Electron',
-        'Node.js',
-        'Axios',
-        'PostgreSQL',
+      category: 'internal' as const,
+      title: '사내 개발 표준화 및 DX 개선',
+      period: '2025.11 ~ 현재',
+      description:
+        '팀 개발 생산성 향상을 위한 보일러플레이트, 유틸리티, 모바일 앱 개발',
+      technologies: ['React', 'TypeScript', 'React Native', 'Three.js'],
+      highlights: [
+        '프론트엔드 보일러플레이트 구축 및 지속 유지보수',
+        '3D 모델 뷰어 연동 유틸리티 프로그램 기획·개발',
       ],
-      features: [
-        '백엔드 API 개발',
-        'AWS 클라우드 인프라',
-        '데이터 파이프라인 구축',
-      ],
-      achievements: [
-        '데이터 흐름 안정화',
-        '단독 개발로 전체 구조 이해 및 구현 역량 입증',
-        '고객사 요구사항 정리 및 반영',
-        '프론트, 백엔드 포함 전반 단독 구현',
-      ],
-      image: '/api/placeholder/400/250',
+      icon: '🛠️',
     },
     {
       id: 3,
-      title: 'C사 온도 모니터링 시스템',
-      description: '기존 고객사 앱 기반으로 UI/UX 강화, 다양한 시각화 도입',
-      technologies: ['React', 'TypeScript', 'Electron'],
-      features: [
-        '다양한 차트 시각화',
-        '대시보드 UI 개선',
-        '실시간 데이터 처리',
+      category: 'monitoring' as const,
+      title: 'S업체 폐쇄망 맞춤형 시스템',
+      period: '2024.06 ~ 2025.10',
+      description:
+        '고객사 내부망 환경에 맞춘 시스템 통합 개발 및 Electron → Web 전환',
+      technologies: ['React', 'TypeScript', 'Node.js', 'tRPC'],
+      highlights: [
+        '폐쇄망 제약 파악 후 Electron → Web 선제적 마이그레이션',
+        '대용량 데이터 차트 렌더링 최적화로 안정적 운영 확보',
       ],
-      achievements: [
-        '사용자 만족도 향상',
-        '실시간 모니터링의 효율 개선',
-        '프론트엔드 전체 담당',
-      ],
-      image: '/api/placeholder/400/250',
+      icon: '🏭',
     },
     {
       id: 4,
-      title: 'B사 온도 모니터링 시스템',
-      description: '기존 시스템을 고객 요구사항에 맞춰 커스터마이징',
-      technologies: ['React', 'TypeScript', 'Electron'],
-      features: ['컴포넌트 구조화', '재사용 가능한 모듈', '유지보수성 강화'],
-      achievements: [
-        '코드 유지보수성 향상',
-        '다수 고객사에 효율적으로 대응 가능',
-        '프론트 전반 담당',
+      category: 'monitoring' as const,
+      title: 'P업체 3D 연동 산업용 모니터링',
+      period: '2024.05 ~ 2026.03',
+      description:
+        '산업용 모니터링 시스템 프론트엔드 개발 및 3D 모델 연동, V2 고도화',
+      technologies: ['React', 'TypeScript', 'Three.js'],
+      highlights: [
+        '3D 모델 연동 모니터링 화면 개발',
+        '요구사항 변화에 맞춘 V2 화면 고도화',
       ],
-      image: '/api/placeholder/400/250',
+      icon: '📊',
     },
     {
       id: 5,
-      title: 'A사 온도 모니터링 시스템',
-      description: '다양한 시각화 방식 제공 + Excel/PDF 리포트 출력 기능 추가',
-      technologies: ['React', 'TypeScript', 'Electron'],
-      features: ['데이터 수집 파이프라인', '실시간 모니터링', '시각화 시스템'],
-      achievements: [
-        '업무 자동화',
-        '시각화 정확도 향상',
-        '프론트 주도, 백엔드 일부 개선',
+      category: 'monitoring' as const,
+      title: 'A업체 모니터링 시스템',
+      period: '2023.12 ~ 현재',
+      description: '모니터링 시스템 전 주기 프론트엔드 개발 및 모바일 확장',
+      technologies: ['React', 'TypeScript', 'React Native'],
+      highlights: [
+        '신규 기능 기획부터 프론트엔드 구현까지 전 주기 참여',
+        'React Native 모바일 모니터링 앱 설계·개발',
       ],
-      image: '/api/placeholder/400/250',
+      icon: '⚙️',
     },
     {
       id: 6,
-      title: '소형 스마트팜 어플',
-      description:
-        '스마트팜 센서 정보를 시각화하고 제어할 수 있는 앱 프로토타입 개발',
-      technologies: ['Flutter', 'Figma'],
-      features: ['블루투스 센서 연동', '환경 정보 시각화', '원격 제어 시스템'],
-      achievements: [
-        '앱 방향성 설정',
-        '기술 실험 성공',
-        '기획~프로토타입 전체 주도',
+      category: 'mobile' as const,
+      title: '스마트팜 애플리케이션',
+      period: '2023.04 ~ 2023.06',
+      description: '스마트팜용 모바일 UI/UX 설계 및 React Native 개발',
+      technologies: ['React Native', 'TypeScript'],
+      highlights: [
+        '모바일 UI/UX 설계부터 개발까지 전체 주도',
+        '센서 정보 시각화 화면 구현',
       ],
-      image: '/api/placeholder/400/250',
+      icon: '🌱',
     },
     {
       id: 7,
-      title: '대기환경 어플',
+      category: 'mobile' as const,
+      title: '도시환경 서비스',
+      period: '2022.06 ~ 2022.12',
       description:
-        '날씨, 게시판, 지도 기능 포함된 공공 데이터 기반 지역 앱 개발',
-      technologies: ['React Native', 'Node.js', 'MongoDB'],
-      features: ['공공 API 활용', '지역 정보 서비스', '모바일 최적화'],
-      achievements: [
-        '지역 정보 접근성 향상',
-        '실사용 가능 MVP 구축',
-        'AR 제외 전 기능 개발 / 기획 일부 참여',
+        '모바일 앱(Flutter)과 관리자 웹(React) 동시 개발 및 API 설계',
+      technologies: ['React', 'Flutter', 'Node.js'],
+      highlights: [
+        'Flutter 앱과 React 관리자 웹 동시 개발',
+        'REST API 설계 및 데이터 모델링',
       ],
-      image: '/api/placeholder/400/250',
+      icon: '🏙️',
     },
     {
       id: 8,
-      title: '온실 모니터링 제어프로그램',
-      description: '센서 기반 환경 모니터링 + 제어 + CCTV 통합 앱 개발',
+      category: 'monitoring' as const,
+      title: '온실 통합 제어·모니터링',
+      period: '2022.02 ~ 2023.03',
+      description:
+        '센서 기반 환경 모니터링·제어 시스템 화면 기획 및 프론트엔드 구현',
       technologies: ['React', 'Node.js', 'MySQL'],
-      features: ['터치스크린 인터페이스', 'CCTV 영상 감시', '환경 제어 시스템'],
-      achievements: [
-        '직관적 제어 가능',
-        '효율적 관리 환경 제공',
-        '프론트 전체 / 백엔드 유지보수',
+      highlights: [
+        '터치스크린 환경 모니터링·제어 UI 설계·구현',
+        '서버 리뉴얼 기획 참여 (API 구조 개선)',
       ],
-      image: '/api/placeholder/400/250',
+      icon: '🌡️',
     },
     {
       id: 9,
-      title: '도시 하천 모니터링',
-      description: '지역 날씨 정보를 실시간 제공하는 데스크탑 앱',
-      technologies: ['React Native', 'Node.js', 'MongoDB'],
-      features: ['키오스크 인터페이스', '공공 기상 API', '지역별 데이터 수집'],
-      achievements: [
-        '실사용 환경에서 안정 운영',
-        '정보 접근성 향상',
-        '프론트 전반 담당, 기획 일부 참여',
+      category: 'monitoring' as const,
+      title: '도시 하천 감시 시스템',
+      period: '2021.06 ~ 2021.12',
+      description:
+        '시스템 아키텍처 설계 및 실시간 센서 데이터 시각화 프론트엔드 개발',
+      technologies: ['React', 'TypeScript', 'Node.js'],
+      highlights: [
+        '프로젝트 초기 아키텍처 설계 주도',
+        '실시간 센서 데이터 차트 구현',
       ],
-      image: '/api/placeholder/400/250',
+      icon: '🌊',
     },
   ]
 
   return (
-    <section id="projects" className="py-20 bg-gray-100">
+    <section id="projects" className="py-20 bg-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
               진행한 프로젝트
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              센서 기반 모니터링 시스템부터 모바일 앱까지 다양한 프로젝트를
-              성공적으로 완료했습니다
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              산업용 모니터링부터 사내 도구까지 — 핵심만 정리했습니다.
+              상세 내용은 면접 시 설명드릴 수 있습니다.
+            </p>
+            <p className="text-sm text-slate-400 mt-3 max-w-xl mx-auto">
+              납품·사내 프로젝트는 보안상 UI 스크린샷 대신 카테고리 아이콘으로
+              표시합니다.
             </p>
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden group"
-              >
-                {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-300" />
-                  <div className="absolute inset-0 flex items-center justify-center text-4xl text-gray-400">
-                    📱
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => {
+              const style = categoryStyles[project.category]
+              return (
+                <div
+                  key={project.id}
+                  className={`bg-white rounded-xl border border-slate-200 border-t-4 ${style.accent} hover:shadow-md transition-shadow`}
+                >
+                  <div className="p-6">
+                    <div className="flex items-start justify-between gap-3 mb-4">
+                      <span
+                        className={`text-xs font-medium px-2.5 py-1 rounded-md ${style.bg}`}
+                      >
+                        {style.label}
+                      </span>
+                      <span className="text-2xl opacity-50" aria-hidden>
+                        {project.icon}
+                      </span>
+                    </div>
 
-                {/* Project Content */}
-                <div className="p-6">
-                  {/* Title and Technologies */}
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 mb-1 leading-snug">
                       {project.title}
                     </h3>
-                    <div className="flex flex-wrap gap-2 mb-3">
+                    <p className="text-sm text-sky-600 mb-3">{project.period}</p>
+
+                    <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5 mb-4">
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full"
+                          className="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs rounded"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
-                  </div>
 
-                  {/* Description */}
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-700 mb-2">
-                      주요 기능:
-                    </h4>
-                    <ul className="space-y-1">
-                      {project.features.map((feature, index) => (
+                    <ul className="space-y-2 border-t border-slate-100 pt-4">
+                      {project.highlights.map((item) => (
                         <li
-                          key={index}
-                          className="text-xs text-gray-600 flex items-start"
+                          key={item}
+                          className="text-xs text-slate-600 flex items-start gap-2 leading-relaxed"
                         >
-                          <span className="text-blue-500 mr-2">•</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Achievements */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-700 mb-2">
-                      성과:
-                    </h4>
-                    <ul className="space-y-1">
-                      {project.achievements.map((achievement, index) => (
-                        <li
-                          key={index}
-                          className="text-xs text-gray-600 flex items-start"
-                        >
-                          <span className="text-green-500 mr-2">✓</span>
-                          {achievement}
+                          <span className="text-sky-500 shrink-0 mt-0.5">—</span>
+                          {item}
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
