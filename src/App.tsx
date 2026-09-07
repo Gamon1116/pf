@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
@@ -7,39 +7,9 @@ import { Experience } from './components/Experience'
 import { Projects } from './components/Projects'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
-import { FloatingScrollButton } from './components/FloatingScrollButton'
-
 function App() {
-  const handleContactClick = useCallback(() => {
-    const contactSection = document.getElementById('contact')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
-    }
-  }, [])
-
-  const handleProjectsClick = useCallback(() => {
-    const projectsSection = document.getElementById('projects')
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' })
-    }
-  }, [])
-
-  return (
-    <div className="min-h-screen bg-slate-50">
-      <Header onContactClick={handleContactClick} />
-      <Hero
-        onContactClick={handleContactClick}
-        onProjectsClick={handleProjectsClick}
-      />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
-      <FloatingScrollButton />
-    </div>
-  )
+ const contact = () => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})
+ const projects = () => document.getElementById('projects')?.scrollIntoView({behavior:'smooth'})
+ return <><a className="skip-link" href="#main">본문으로 이동</a><Header onContactClick={contact}/><main id="main"><Hero onContactClick={contact} onProjectsClick={projects}/><Projects/><Experience/><Skills/><About/><Contact/></main><Footer/></>
 }
-
 export default App

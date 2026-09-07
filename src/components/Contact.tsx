@@ -51,7 +51,7 @@ export function Contact() {
               {EMAIL}
             </a>
             <p className="text-sm text-slate-500 mt-3">
-              보통 24시간 이내에 답변드립니다.
+              채용 및 협업 관련 문의는 이메일로 연락해 주세요.
             </p>
           </div>
 
@@ -62,8 +62,11 @@ export function Contact() {
             <p className="text-sm text-slate-600 leading-relaxed">
               납품·사내 프로젝트는 보안상 공개 범위가 제한됩니다. Figma
               시안·PDF 포트폴리오 등 상세 자료가 필요하시면 이메일로
-              요청해 주세요. 면접 시 화면 설계·프로토타입 작업물도 설명드릴 수
-              있습니다.
+              요청해 주세요.
+            </p>
+            <p className="text-sm text-slate-600 leading-relaxed mt-3">
+              면접 시 실제 설계 과정과 기술적 의사결정, 문제 해결 사례를 상세히
+              설명드릴 수 있습니다.
             </p>
           </div>
 
@@ -72,7 +75,7 @@ export function Contact() {
             className="space-y-5 border border-slate-200 rounded-2xl p-8"
           >
             <h3 className="text-lg font-semibold text-slate-900 mb-2">
-              메시지 보내기
+              이메일 작성하기
             </h3>
             <p className="text-sm text-slate-500 mb-4">
               작성 후 기본 메일 앱이 열립니다.
@@ -156,7 +159,7 @@ export function Contact() {
             </div>
 
             <button type="submit" className="w-full btn btn-primary py-3 text-sm">
-              메일 앱으로 보내기
+              메일 앱에서 이어서 작성하기
             </button>
           </form>
         </div>
